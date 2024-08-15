@@ -3,22 +3,20 @@ body {
     margin: 0;
     padding: 15px;
     background-color: #e6e6e6;
-    color: rgb(0, 0, 0);
+    color: #000;
 }
 
 img {
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .nav {
-    margin: 0;
-    padding: 15px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    text-align: right;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
 }
 
 .nav img {
@@ -30,7 +28,7 @@ img {
 }
 
 .nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -43,41 +41,45 @@ img {
 
 .nav ul li a {
     text-decoration: none;
-    color: rgb(71, 71, 71);
+    color: #474747;
 }
 
 .nav ul li a:hover {
     text-decoration: underline;
 }
 
-.form-group {
-    margin-bottom: 15px;
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #ffc422;
+    color: #000;
+    text-align: center;
+    border-radius: 8px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-.form-group button {
-    padding: 10px 15px;
-    background-color: #0073e6;
-    color: white;
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00d2da;
+    color: #000;
     border: none;
+    border-radius: 15px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 16px;
 }
 
-.form-group button:hover {
-    background-color: #005bb5;
+button:hover {
+    background-color: #00a1a1;
 }
 
-#endereco {
-    margin-top: 20px;
+#cepInput {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
 }
