@@ -20,13 +20,12 @@
     </nav>
 
   
-  
-    <h1>Consulta de CEP</h1>
-    <label for="cepInput">Digite o CEP:</label>
+    <div class = container>
+    <h1>PROCURE O CEP</h1>
     <input type="text" id="cepInput">
-    <button onclick="buscarEndereco()">Buscar</button>
+    <button onclick="buscarEndereco()">BUSCAR</button>
     <div id="endereco"></div>
-
+</div>
     <script>
         function buscarEndereco() {
             var cep = document.getElementById('cepInput').value;
