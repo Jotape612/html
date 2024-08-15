@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+    <link rel="stylesheet" href="correios.css">
+</head>
+<body>
+    <nav class="nav">
+        <img src="https://99prod.s3.amazonaws.com/uploads/1aaaf88e-415a-42b5-9fc5-f0b5b4b24acc/correios-logo-2.png" alt="Logo dos Correios" width="80" height="70">
+        <span>Site <b>Correios</b></span>
+        <ul>
+            <li><a href="#">Rastreamento de Objeto</a></li>
+            <li><a href="#">Link Correios</a></li>
+            <li><a href="#">Buscar CEP</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+
+  
+  
+    <h1>Consulta de CEP</h1>
+    <label for="cepInput">Digite o CEP:</label>
+    <input type="text" id="cepInput">
+    <button onclick="buscarEndereco()">Buscar</button>
+    <div id="endereco"></div>
+
+    <script>
+        function buscarEndereco() {
+            var cep = document.getElementById('cepInput').value;
+            var url = `https://viacep.com.br/ws/${cep}/json/`;
+            
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if(data.erro) {
+                    document.getElementById('endereco').innerText = "CEP não encontrado.";
+                } else {
+                    var endereco = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
+                    document.getElementById('endereco').innerText = endereco;
+                }
+            })
+            .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+</html>
